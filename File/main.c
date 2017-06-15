@@ -11,6 +11,40 @@ int main()
 {
     int a[20];
     int n,k,j,i,temp;
+    printf("直接排序请按1\n" "文件中排序请按2\n");
+    scanf("%d",&p);
+    if(p=1)
+    {
+        int a[10];
+        int j,i,k;
+        int temp;
+        printf("请输入十个整数\n");
+        for(i=0;i<=9;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        for(j=0;j<9;j++)
+        {
+            for(k=0;k<9-j;k++)
+            {
+                if(a[k]>a[k+1])
+                {
+                    temp=a[k];
+                    a[k]=a[k+1];
+                    a[k+1]=temp;
+                }
+            }
+        }
+        for(k=0;k<i;k++)
+        {
+            printf("%d ",a[k]);
+        }
+        
+        printf("\n");
+        return 0;
+    }
+    else
+    {
     FILE *fp1;
     FILE *fp2;
     fp1=fopen("//Users//lyh20161104592//Desktop//File//paixu.txt","r+");
@@ -51,4 +85,7 @@ int main()
              fclose(fp2);
     }
              return 0;
+}
+
+return 0;
 }
