@@ -10,10 +10,10 @@
 int main()
 {
     int a[20];
-    int n,k,j,i,temp;
+    int n,k,j,i,o,temp,v,b,m,tem;
     printf("直接排序请按1\n" "文件中排序请按2\n");
-    scanf("%d",&p);
-    if(p=1)
+    scanf("%d",&o);
+    if(o==1)
     {
         int a[10];
         int j,i,k;
@@ -41,7 +41,6 @@ int main()
         }
         
         printf("\n");
-        return 0;
     }
     else
     {
@@ -57,26 +56,26 @@ int main()
     {
         while(fscanf(fp1,"%d",&n)!=EOF)
         {
-            for(i=0;i<n;i++)
+            for(b=0;b<n;b++)
             {
-                fscanf(fp1,"%d",&a[i]);
+                fscanf(fp1,"%d",&a[b]);
             }
-            for(j=0;j<n-1;j++)
+            for(m=0;m<n-1;m++)
             {
-                for(k=0;k<n-1-j;k++)
+                for(v=0;v<b-1-m;v++)
                 {
-                    if(a[k]>a[k+1])
+                    if(a[v]>a[v+1])
                     {
-                        temp=a[k];
-                        a[k]=a[k+1];
-                        a[k+1]=temp;
+                        tem=a[v];
+                        a[v]=a[v+1];
+                        a[v+1]=tem;
                     }
                 }
             }
-            for(k=0;k<n;k++)
+            for(v=0;v<n;v++)
             {
-                printf("%d ",a[k]);
-                fprintf(fp2,"%d ",a[k]);
+                printf("%d ",a[v]);
+                fprintf(fp2,"%d ",a[v]);
             }
             fprintf(fp2,"\n");
             printf("\n");
@@ -84,7 +83,6 @@ int main()
              fclose(fp1);
              fclose(fp2);
     }
-             return 0;
 }
 
 return 0;
